@@ -324,8 +324,24 @@ TargetSales = SUM('Sales'[LineTotal]) * 1.2
   - Configuración de secretos en Github
   ![image](assets/imagen7.png)
   - Creación de infraestructura: Resource Group, Servidor SQL, la Base de datos AdventureWorksLT, archivo main.tf
+  ![image](assets/imagen8.png)
+  ![image](assets/imagen9.png)
   - Configuracion del archivo de workflow bd.yml
+  ![image](assets/imagen10.png)
+  ![image](assets/imagen11.png)
   - Ejecución del workflow Deploy Infra and Restore DB
+  ![image](assets/imagen12.png)
+  ![image](assets/imagen13.png)
 
 3. Conectar el dashboard con la base de datos, subir la captura de la conexion en el archivo conexion.png
+### 🔧 Pasos realizados:
+  - Abrir Power Bi Desktop y seleccionar obtener datos de Base de Datos SQL de Azure
+    ![image](assets/imagen14.png)
+  - Ingresar los datos de conexion y luego la autentificacion de Azure SQL, con el usuario y contraseña creados
+  ![image](assets/imagen15.png)
+  - Verificar las tablas disponibles y cargar
+  ![image](assets/imagen16.png)
+  ![image](assets/imagen17.png)
+  - Ya se conecto a Power BI
+
 4. Construir una automatizacion que despliegue el Dashboard de PowerBI en su espacio (.github/workflows/publish_dashboard.yml), puede utilizar un actión como este https://github.com/marketplace/actions/power-bi-pipeline-deploy o similar.
