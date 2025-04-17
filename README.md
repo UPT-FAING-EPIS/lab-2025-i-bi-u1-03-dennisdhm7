@@ -2,7 +2,7 @@
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=19081633)
 # SESION DE LABORATORIO N° 03: Visualización de Datos con PowerBI
 
-### Nombre:
+### Nombre:Christian Dennis Hinojosa Mucho
 
 ## OBJETIVOS
   * Comprender la organización la información de nuestros datos de tal manera que todos los que los vean 
@@ -303,6 +303,22 @@ TargetSales = SUM('Sales'[LineTotal]) * 1.2
 ---
 ## Actividades
 1. Crear la infraestructura para una base de datos Azure SQL utilizando Terraform, en la ruta infra/main.tf.
+### 🔧 Pasos realizados:
+  - Se creó el archivo `infra/main.tf` con la definición de los recursos: grupo de recursos, servidor SQL y base de datos.
+  ![image](assets/imagen1.png)
+
+  - Se inicializó y aplicó la infraestructura con los siguientes comandos:
+    - `terraform init`
+    - `terraform plan`
+    - `terraform apply -auto-approve`
+  
+  ![image](assets/imagen2.png)
+  ![image](assets/imagen3.png)
+  ![image](assets/imagen4.png)
+  ![image](assets/imagen5.png)
+
+  - Se verificó desde el portal de Azure que los recursos fueron creados correctamente.
+  ![image](assets/imagen6.png)
 2. Construir una automatización en github actions (.github/workflows/bd.yml) que despliegue la infraestructura de base de datos utilizando Terraform y una herramienta para ejecutar la restauracion de la base de datos (Powershell, Liquibase u otro)
 3. Conectar el dashboard con la base de datos, subir la captura de la conexion en el archivo conexion.png
 4. Construir una automatizacion que despliegue el Dashboard de PowerBI en su espacio (.github/workflows/publish_dashboard.yml), puede utilizar un actión como este https://github.com/marketplace/actions/power-bi-pipeline-deploy o similar.

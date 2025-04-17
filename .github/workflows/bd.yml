@@ -1,0 +1,36 @@
+name: Deploy Infra and Restore DB
+
+on:
+  workflow_dispatch:  # Para ejecución manual
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.6
+
+    - name: Inicializar Terraform
+      working-directory: infra
+      run: terraform init
+
+    - name: Aplicar Terraform
+      working-directory: infra
+      run: terraform apply -auto-approve
+
+    - name: Restaurar base de datos AdventureWorksLT
+      shell: pwsh
+      run: |
+        $sqlServer = "${{ secrets.SQL_SERVER_NAME }}.database.windows.net"
+        $user = "${{ secrets.SQL_ADMIN_USER }}"
+        $pass = "${{ secrets.SQL_ADMIN_PASS }}"
+        $database = "AdventureWorksLT"
+        $scriptPath = "database/script.sql"
+
+        sqlcmd -S $sqlServer -d $database -U $user -P $pass -i $scriptPath
