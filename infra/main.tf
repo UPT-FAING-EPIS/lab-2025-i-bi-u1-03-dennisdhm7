@@ -4,11 +4,10 @@ provider "azurerm" {
   subscription_id = "715ad6a0-5b95-442f-b928-60cffbfb75c6"
 }
 
-
 resource "azurerm_mssql_server" "sqlserver" {
   name                         = "sqlserverpowerbidemoxyz"
-  resource_group_name          = azurerm_resource_group.rg.name
-  location                     = azurerm_resource_group.rg.location
+  resource_group_name          = "rg-powerbi-demo"       # Valor fijo
+  location                     = "westus"                # Valor fijo
   version                      = "12.0"
   administrator_login          = "adminuser"
   administrator_login_password = "Upt2025@"
