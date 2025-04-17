@@ -320,5 +320,12 @@ TargetSales = SUM('Sales'[LineTotal]) * 1.2
   - Se verificó desde el portal de Azure que los recursos fueron creados correctamente.
   ![image](assets/imagen6.png)
 2. Construir una automatización en github actions (.github/workflows/bd.yml) que despliegue la infraestructura de base de datos utilizando Terraform y una herramienta para ejecutar la restauracion de la base de datos (Powershell, Liquibase u otro)
+### 🔧 Pasos realizados:
+  - Configuración de secretos en Github
+  ![image](assets/imagen7.png)
+  - Creación de infraestructura: Resource Group, Servidor SQL, la Base de datos AdventureWorksLT, archivo main.tf
+  - Configuracion del archivo de workflow bd.yml
+  - Ejecución del workflow Deploy Infra and Restore DB
+
 3. Conectar el dashboard con la base de datos, subir la captura de la conexion en el archivo conexion.png
 4. Construir una automatizacion que despliegue el Dashboard de PowerBI en su espacio (.github/workflows/publish_dashboard.yml), puede utilizar un actión como este https://github.com/marketplace/actions/power-bi-pipeline-deploy o similar.
